@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myappdb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myappdb
+  template:
+    metadata:
+      labels:
+        app: myappdb
+    spec:
+      containers:
+      - name: myappdb
+        image: myappdb:latest
+        imagePullPolicy: Never
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: "pswd"
+          - name: MYSQL_DATABASE
+            value: "todolist"
+        ports:
+        - containerPort: 3306
