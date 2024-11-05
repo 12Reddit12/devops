@@ -16,6 +16,7 @@ sudo chown -R www-data:www-data /var/www/html
 
 echo "** Setting MySQL IP in config/db.php **"
 sudo sed -i "s/myappdb-service/$MYSQL_IP/g" /var/www/html/config/db.php
+sudo sed -i 's/\r//g' /var/www/html/config/db.php
 
 # Налаштування конфігурації Nginx для обробки PHP
 cat <<EOL | sudo tee /etc/nginx/sites-available/default
