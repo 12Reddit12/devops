@@ -45,6 +45,7 @@ try {
         <div>
             <h1>MySQL not working</h1>
             <p>Please wait, we are working to fix the issue.</p>
+            <pre>' . htmlspecialchars($e->getMessage()) . '</pre>
         </div>
     </body>
     </html>';
