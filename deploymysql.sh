@@ -11,7 +11,7 @@ wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
 sudo dpkg -i mysql-apt-config_0.8.22-1_all.deb
 sudo apt-get update -y
 
-
+echo "** Installing MySQL Server **"
 sudo apt-get install -y mysql-server
 
 echo "** Downloading init.sql **"
