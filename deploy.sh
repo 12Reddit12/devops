@@ -3,9 +3,9 @@ set -e
 
 MYSQL_IP=$1
 
-echo "** Installing nginx and git **"
+echo "** Installing nginx php-fpm and git **"
 sudo apt-get update
-sudo apt-get install -y nginx git
+sudo apt-get install -y nginx php-fpm git
 
 echo "** Cleaning up /var/www/html directory **"
 sudo rm -rf /var/www/html/*
