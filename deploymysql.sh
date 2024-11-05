@@ -5,7 +5,7 @@ MYSQL_IP=$1
 
 echo "** Installing MySQL **"
 sudo apt-get update
-sudo apt-get upgrade -y
+
 sudo apt-get install -y wget lsb-release gnupg
 
 wget https://dev.mysql.com/get/mysql-apt-config_0.8.33-1_all.deb
