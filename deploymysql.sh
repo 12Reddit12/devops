@@ -3,13 +3,10 @@ set -e
 
 echo "** Installing MySQL **"
 sudo apt-get update -y
+sudo apt-get upgrade -y
 sudo apt-get install -y wget lsb-release gnupg
 
-wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
-sudo dpkg -i mysql-apt-config_0.8.22-1_all.deb
-sudo apt-get update -y
-
-sudo apt-get install -y mysql-server
+sudo apt-get install -y mysql-server mysql-client
 
 MYSQL_ROOT_PASSWORD="todolistpswd"
 
