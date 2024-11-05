@@ -7,6 +7,9 @@ echo "** Installing nginx and git **"
 sudo apt-get update
 sudo apt-get install -y nginx git
 
+echo "** Cleaning up /var/www/html directory **"
+sudo rm -rf /var/www/html/*
+
 echo "** Cloning website files **"
 sudo git clone https://github.com/12Reddit12/devops.git /var/www/html
 sudo chown -R www-data:www-data /var/www/html
