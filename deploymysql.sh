@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
+MYSQL_IP=$1
+
 echo "** Installing MySQL **"
-sudo apt-get update -y
+sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install -y wget lsb-release gnupg
 
