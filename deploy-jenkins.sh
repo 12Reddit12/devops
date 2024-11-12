@@ -26,3 +26,4 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] \
   http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee \
   -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo apt-get update && sudo apt-get install -y google-cloud-sdk      
+sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
