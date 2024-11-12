@@ -2,7 +2,7 @@
  set -e
 sudo apt-get update
 echo "** Install Jenkins **"
-sudo apt-get install -y openjdk-11-jdk
+sudo apt-get install -y fontconfig openjdk-17-jre
 curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee \
   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
