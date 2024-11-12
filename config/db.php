@@ -1,8 +1,8 @@
 <?php
 $host = getenv('MYSQL_HOST') ?: 'myappdb-service';
 $db = getenv('MYSQL_DATABASE') ?: 'todolist';
-$user = getenv('MYSQL_USER') ?: 'my_user';
-$pass = getenv('MYSQL_PASSWORD') ?: 'my_password';
+$user = getenv('MYSQL_USER') ?: 'root';
+$pass = getenv('MYSQL_PASSWORD') ?: 'pswd';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
