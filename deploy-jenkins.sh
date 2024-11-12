@@ -16,6 +16,7 @@ sudo systemctl enable jenkins
 echo "** Install Docker **"
 sudo apt-get install -y docker.io
 sudo usermod -aG docker jenkins
+sudo systemctl restart docker
 
 echo "** Installing git **"
 sudo apt-get install -y git
