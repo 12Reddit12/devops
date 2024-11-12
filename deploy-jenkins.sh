@@ -27,3 +27,4 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] \
   -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo apt-get update && sudo apt-get install -y google-cloud-sdk      
 sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+sudo apt-get install kubectl
