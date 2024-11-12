@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: myappdb
-        image: myappdb:latest
-        imagePullPolicy: Never
+        image: gcr.io/instant-text-434604-i1/myappdb:latest
+        imagePullPolicy: Always
         env:
           - name: MYSQL_ROOT_PASSWORD
             value: "pswd"
