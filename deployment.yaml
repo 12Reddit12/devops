@@ -12,6 +12,12 @@ spec:
       labels:
         app: myapp
     spec:
+      restartPolicy: Always
+      strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 1
+        maxSurge: 1
       containers:
       - name: myapp
         image: gcr.io/instant-text-434604-i1/myapp:latest
