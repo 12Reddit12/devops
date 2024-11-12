@@ -22,7 +22,7 @@ if(isset($_SESSION['user'])){
 
 <div class="wrapper">
     <form class="form-signin" action="/controllers/login.php" method="POST">       
-      <h2 class="form-signin-heading">Авторизація в систему</h2>
+      <h2 class="form-signin-heading">Авторизація</h2>
       <small><?php GetErrorMsg('error') ?></small>
       <input type="text" class="form-control <?php GetErrorAttr('name') ?>" name="username" placeholder="Логін"  required="" autofocus="" />
      
