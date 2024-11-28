@@ -6,15 +6,13 @@ import pytest
 
 @pytest.fixture(scope="module")
 def driver():
-    # Створюємо сервіс для ChromeDriver
     service = Service(ChromeDriverManager().install())
     options = webdriver.ChromeOptions()
 
-    # Додаємо опції для безголової роботи Chrome
-    options.add_argument('--headless')  # Безголовий режим
-    options.add_argument('--no-sandbox')  # Безпека
-    options.add_argument('--disable-dev-shm-usage')  # Використання оперативної пам'яті
-    options.binary_location = "/usr/local/bin/chromedriver"  # Вказуємо розташування Chrome
+    options.add_argument('--headless') 
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.binary_location = "/usr/bin/google-chrome-stable"
 
     driver = webdriver.Chrome(service=service, options=options)
     yield driver
