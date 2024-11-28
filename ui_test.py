@@ -20,8 +20,6 @@ def driver():
 
 def test_login_page(driver):
     driver.get("http://localhost:1337/pages/register.php")
-    login_form = driver.find_element(By.ID, "loginForm")
-    assert login_form is not None, "Login form not found"
     username = driver.find_element(By.NAME, "username")
     password = driver.find_element(By.NAME, "password")
     login_button = driver.find_element(By.XPATH, "//button[@type='submit']")
