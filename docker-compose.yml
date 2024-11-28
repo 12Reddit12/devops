@@ -2,9 +2,9 @@ version: '3'
 services:
   web:
     build: .
-    image: myapp:latest
+    image: gcr.io/instant-text-434604-i1/myapp:latest
     ports:
-      - "8080:80"
+      - "1337:80"
     depends_on:
       - db
     environment:
