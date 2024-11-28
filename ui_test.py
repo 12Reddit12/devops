@@ -26,9 +26,7 @@ def driver():
     options.add_argument('--disable-gpu')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--no-sandbox')
-    driver = webdriver.Chrome(service = service, options=options)
-   
-
+ 
     driver = webdriver.Chrome(service = service, options=options)
     yield driver
     driver.quit()
