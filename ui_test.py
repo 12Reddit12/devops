@@ -25,5 +25,8 @@ def test_login_page(driver):
     username.send_keys("testuser")
     password.send_keys("testpassword")
     login_button.click()
-    time.sleep(10)
-    assert driver.current_url == "http://localhost:1337/pages/login.php", "Failed to login"
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//h2[@class='form-signin-heading' and text()='Авторизація в систему']"))
+    )
+    heading = driver.find_element(By.XPATH, "//h2[@class='form-signin-heading']")
+    assert heading.text == "Авторизація в систему", "Failed to login"
