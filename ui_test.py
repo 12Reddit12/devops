@@ -6,8 +6,11 @@ import pytest
 
 @pytest.fixture(scope="module")
 def driver():
-    service = Service(ChromeDriverManager().install())  # автоматичне завантаження chromedriver
-    driver = webdriver.Chrome(service=service)
+    # Створюємо сервіс для ChromeDriver
+    service = Service(ChromeDriverManager().install())
+    options = webdriver.ChromeOptions()
+    options.binary_location = "/usr/local/bin/chromedriver"  # Вказуємо розташування Chrome
+    driver = webdriver.Chrome(service=service, options=options)
     yield driver
     driver.quit()
 
