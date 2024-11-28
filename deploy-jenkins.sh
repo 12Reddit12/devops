@@ -27,6 +27,7 @@ sudo apt-get update -y && sudo apt-get install -y google-cloud-sdk
 sudo apt-get install -y google-cloud-sdk-gke-gcloud-auth-plugin
 sudo apt-get install -y kubectl
 
+sudo apt install unzip
 sudo apt install -y python3-pip
 
 sudo pip3 install selenium
