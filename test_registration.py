@@ -14,13 +14,13 @@ def test_registration_empty_fields():
     assert "Всі поля повинні бути заповнені!" in response.text
 
 def test_registration_valid_data_without_avatar():
-    """Тест на коректну реєстрацію без аватару."""
+    """Тест на коректну реєстрацію."""
     data = {
         'username': 'new_user',
         'password': 'newpassword'
     }
     response = requests.post(BASE_URL, data=data)
-    assert response.status_code == 302 
+    assert response.status_code == 200
 
 def test_registration_user_exists():
     """Тест на наявність користувача з таким же логіном."""
