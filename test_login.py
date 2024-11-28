@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = "http://localhost:1337/pages/login.php"
+BASE_URL = "http://localhost:1337/controllers/login.php"
 
 def test_login_success():
     """Тест на успішну авторизацію."""
