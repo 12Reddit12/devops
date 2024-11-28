@@ -34,7 +34,7 @@ sudo pip3 install selenium
 sudo pip3 install pytest
 sudo pip3 install webdriver-manager
 sudo apt-get install -y chromium-chromedriver
-
+sudo apt install -y google-chrome-stable
 
 CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
 SELENIUM_STANDALONE_VERSION=3.13.0
