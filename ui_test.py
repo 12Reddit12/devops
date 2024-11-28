@@ -1,13 +1,13 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 import pytest
-
-
-driver_path = "/usr/local/bin/chromedriver"
 
 @pytest.fixture(scope="module")
 def driver():
-    driver = webdriver.Chrome(executable_path=driver_path)
+    service = Service(ChromeDriverManager().install())  # автоматичне завантаження chromedriver
+    driver = webdriver.Chrome(service=service)
     yield driver
     driver.quit()
 
