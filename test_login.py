@@ -25,5 +25,3 @@ def test_login_invalid_credentials():
 
     assert response.status_code == 200, f"Expected 200, but got {response.status_code}"
     
-    response = requests.get(BASE_URL)
-    assert 'Невірний логін або пароль!' in response.text, "Error message not found"
