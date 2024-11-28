@@ -23,7 +23,7 @@ def test_login_page(driver):
     driver.get("http://localhost:1337/pages/register.php")
     username = driver.find_element(By.NAME, "username")
     password = driver.find_element(By.NAME, "password")
-    login_button = driver.find_element(By.XPATH, "/html/body/div[1]/form/button[2]")
+    login_button = driver.find_element(By.XPATH, "/html/body/div[1]/form/button[1]")
     username.send_keys("testuser")
     password.send_keys("testpassword")
     login_button.click()
