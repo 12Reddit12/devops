@@ -13,9 +13,9 @@ def driver():
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")  # Безголовий режим
     options.add_argument("--disable-dev-shm-usage")
-    options.binary_location = "/usr/bin/google-chrome-stable"
+   
 
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(options=options)
     yield driver
     driver.quit()
 
