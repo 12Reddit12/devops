@@ -27,6 +27,6 @@ def test_login_page(driver):
     username.send_keys("testuser")
     password.send_keys("testpassword")
     login_button.click()
-    time.Sleep(5)
+    time.sleep(5)
     heading = driver.find_element(By.XPATH, "//h2[@class='form-signin-heading']")
     assert heading.text == "Авторизація в систему", "Failed to login"
