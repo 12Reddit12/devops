@@ -9,7 +9,7 @@ import time
 
 @pytest.fixture(scope="module")
 def driver():
-    service = Service(ChromeDriverManager(version="131.0.6778.85").install()) 
+    service = Service(ChromeDriverManager().install()) 
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")  # Безголовий режим
     options.add_argument("--disable-dev-shm-usage")
