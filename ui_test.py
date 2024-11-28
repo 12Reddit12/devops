@@ -24,6 +24,8 @@ def test_login_page(driver):
     login_button = driver.find_element(By.XPATH, "/html/body/div[1]/form/button[2]")
     username.send_keys("testuser")
     password.send_keys("testpassword")
+    login_button.click()
+    login_button.send_keys('\n')
     driver.execute_script("arguments[0].click();", login_button)
     time.sleep(10)
     assert driver.current_url == "http://localhost:1337/pages/login.php", "Failed to login"
