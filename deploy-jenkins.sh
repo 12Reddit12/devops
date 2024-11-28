@@ -32,7 +32,7 @@ sudo apt install -y python3-pip
 
 sudo pip3 install selenium
 sudo pip3 install pytest
-
+sudo pip3 install webdriver-manager
 sudo apt-get install -y chromium-chromedriver
 
 
