@@ -68,3 +68,10 @@ wget -N http://selenium-release.storage.googleapis.com/$SELENIUM_SUBDIR/selenium
 sudo mv -f ~/selenium-server-standalone-$SELENIUM_STANDALONE_VERSION.jar /usr/local/bin/selenium-server-standalone.jar
 sudo chown root:root /usr/local/bin/selenium-server-standalone.jar
 sudo chmod 0755 /usr/local/bin/selenium-server-standalone.jar
+
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo systemctl restart jenkins
+
+
