@@ -23,10 +23,9 @@ def test_login_page(driver):
     driver.get("http://localhost:1337/pages/register.php")
     username = driver.find_element(By.NAME, "username")
     password = driver.find_element(By.NAME, "password")
-    login_button = driver.find_element(By.XPATH, "/html/body/div[1]/form/button[1]")
+    login_button = driver.find_element(By.XPATH, "/html/body/div[1]/form/button[2]")
     username.send_keys("testuser")
     password.send_keys("testpassword")
-    login_button.click()
-    time.sleep(5)
+    wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/form/button[1]"))).click()
     heading = driver.find_element(By.XPATH, "//h2[@class='form-signin-heading']")
     assert heading.text == "Авторизація в систему", "Failed to login"
