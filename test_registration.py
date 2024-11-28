@@ -1,7 +1,7 @@
 import requests
 import os
 
-BASE_URL = "http://localhost:1337/pages/register.php"
+BASE_URL = "http://localhost:1337/controllers/register.php"
 
 
 def test_registration_empty_fields():
