@@ -22,6 +22,7 @@ def driver():
 
 def test_login_page(driver):
     driver.get("http://localhost:1337/pages/register.php")
+    wait = WebDriverWait(driver, 30)
     username = driver.find_element(By.NAME, "username")
     password = driver.find_element(By.NAME, "password")
     login_button = driver.find_element(By.XPATH, "/html/body/div[1]/form/button[2]")
