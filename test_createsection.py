@@ -13,7 +13,7 @@ def test_create_section_successfully():
     
 
     data = {
-        "id": "0",
+        "id": "1",
         "board-name": "Test Section",
         "description": "This is a test section description."
     }
@@ -38,7 +38,7 @@ def test_create_section_missing_fields():
     
 
     data = {
-        "id": "0", 
+        "id": "1", 
         "board-name": "",
         "description": "This is a test section description."
     }
@@ -54,7 +54,7 @@ def test_create_section_unauthorized_access():
     """Тест на спробу створення секції без авторизації."""
 
     data = {
-        "id": "0",
+        "id": "1",
         "board-name": "Unauthorized Section",
         "description": "This should not be created."
     }
