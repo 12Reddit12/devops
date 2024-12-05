@@ -38,12 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             } else {
                 
-                
+                header("Location: /../pages/dashboard.php");
                 exit();
             }
         } else {
             
-            
+            header("Location: /../pages/dashboard.php");
             exit();
         }
     }
