@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config/db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(!isset($_SESSION['user'])){
        
-        header("Location: /../pages/dashboard.php");
+        header("Location: /../pages/login.php");
         exit();
     }
 
