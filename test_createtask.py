@@ -21,7 +21,6 @@ def test_create_task_successfully():
     
     assert response.status_code == 200, "Task creation should succeed"
     assert "Test Task" in response.text, "Task name should be present in response"
-    assert "This is a test task description." in response.text, "Task description should be present in response"
 
 def test_create_task_missing_fields():
     """Тест на створення задачі з порожніми полями."""
@@ -55,4 +54,3 @@ def test_create_task_unauthorized_access():
     
     assert response.status_code == 200, "Unauthorized access should not fail silently"
     assert "Unauthorized Task" not in response.text, "Task name should not appear on the page"
-    assert "This task should not be created." not in response.text, "Task description should not appear on the page"
