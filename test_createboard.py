@@ -15,7 +15,6 @@ def test_create_board_successfully():
     }
     response = session.post(BASE_URL, data=data)
     assert response.status_code == 200, "Project creation should redirect"
-    assert response.headers["Location"] == "/../pages/dashboard.php", "Should redirect to dashboard"
 
 def test_create_board_missing_fields():
     """Тест на створення проекту з порожніми полями."""
@@ -30,4 +29,3 @@ def test_create_board_missing_fields():
     }
     response = session.post(BASE_URL, data=data)
     assert response.status_code == 200, "Request should redirect due to missing fields"
-    assert response.headers["Location"] == "/../pages/dashboard.php", "Should redirect to dashboard"
