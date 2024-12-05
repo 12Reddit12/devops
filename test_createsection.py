@@ -7,7 +7,8 @@ def test_create_section_successfully():
     session = requests.Session()
     session.post(
         "http://localhost:1337/controllers/login.php",
-        data={"username": "new_user", "password": "newpassword"}
+        data={"username": "new_user", "password": "newpassword"},
+        allow_redirects=False
     )
     data = {
         "id": "0",
@@ -23,7 +24,8 @@ def test_create_section_missing_fields():
     session = requests.Session()
     session.post(
         "http://localhost:1337/controllers/login.php",
-        data={"username": "new_user", "password": "testpassword"}
+        data={"username": "new_user", "password": "testpassword"},
+        allow_redirects=False
     )
     data = {
         "id": "0",
@@ -41,6 +43,6 @@ def test_create_section_unauthorized_access():
         "board-name": "Unauthorized Section",
         "description": "This should not be created."
     }
-    response = requests.post(BASE_URL, data=data)
+    response = requests.post(BASE_URL, data=data, allow_redirects=False)
     assert response.status_code == 200, "Unauthorized access should not redirect"
     assert "Location" not in response.headers, "No redirection should occur for unauthorized users"
