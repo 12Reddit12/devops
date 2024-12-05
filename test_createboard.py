@@ -15,6 +15,7 @@ def test_create_board_successfully():
     }
     response = session.post(BASE_URL, data=data)
     assert response.status_code == 200, "Project creation should redirect"
+    assert "Test Board" in response.text
 
 def test_create_board_missing_fields():
     """Тест на створення проекту з порожніми полями."""
