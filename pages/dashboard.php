@@ -69,7 +69,16 @@ $projects = GetProjects();
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="nav-brand">
-                    <img class="avatar" style="height:80px;" src="<?php echo $_SESSION['user']['avatar'] ?>" />
+                    <img class="avatar" style="height:80px;" 
+                     src="<?php 
+                        $avatarPath = $_SESSION['user']['avatar'];
+                        if (!empty($avatarPath) && file_exists($avatarPath)) {
+                            echo $avatarPath;
+                        } else {
+                            echo '../assets/img/default-avatar.png';
+                        }
+                     ?>" />
+
                 </li>
                 <li class="nav-item flex-fill text-center">
                     <a class="nav-link" href="#"><?php echo $_SESSION['user']['username'] ?></a>
