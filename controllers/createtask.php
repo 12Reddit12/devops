@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $pdo->prepare("INSERT INTO task (name, description, task_section_id, task_board_id, complete_date) VALUES (?, ?, ?, ?, ?)");
             if ($stmt->execute([$taskName, $description, $sectionId, $taskBoardId, $completeDate])) {
                 
-               
+               header("Location: /../pages/board.php?id=$taskBoardId");
                 exit();
             } else {
                 
