@@ -51,7 +51,7 @@ def test_create_task_successfully():
         "task-description": "This is a test task description.",
         "complete-date": "2024-12-31"
     }
-    response = session.post(BASE_URL, data=data, allow_redirects=False)
+    response = session.post(BASE_URL, data=data)
     
     assert response.status_code == 200, "Task creation should succeed"
     assert "Test Task" in response.text, "Task name should be present in response"
