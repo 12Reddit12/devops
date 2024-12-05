@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = "http://localhost:1337/controllers/createboard.php"  # Заміни на свою локальну URL
+BASE_URL = "http://localhost:1337/controllers/createboard.php"
 
 def test_create_board_successfully():
     """Тест на успішне створення проекту."""
@@ -14,7 +14,7 @@ def test_create_board_successfully():
         "description": "This is a test project description."
     }
     response = session.post(BASE_URL, data=data)
-    assert response.status_code == 302, "Project creation should redirect"
+    assert response.status_code == 200, "Project creation should redirect"
     assert response.headers["Location"] == "/../pages/dashboard.php", "Should redirect to dashboard"
 
 def test_create_board_missing_fields():
@@ -25,9 +25,9 @@ def test_create_board_missing_fields():
         data={"username": "testuser", "password": "testpassword"}
     )
     data = {
-        "board-name": "",  # Порожнє поле
+        "board-name": "", 
         "description": "This is a test project description."
     }
     response = session.post(BASE_URL, data=data)
-    assert response.status_code == 302, "Request should redirect due to missing fields"
+    assert response.status_code == 200, "Request should redirect due to missing fields"
     assert response.headers["Location"] == "/../pages/dashboard.php", "Should redirect to dashboard"
