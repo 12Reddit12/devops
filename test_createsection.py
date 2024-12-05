@@ -7,7 +7,7 @@ def test_create_section_successfully():
     session = requests.Session()
     session.post(
         "http://localhost:1337/controllers/login.php",
-        data={"username": "new_user", "newpassword": "testpassword"}
+        data={"username": "new_user", "password": "newpassword"}
     )
     data = {
         "id": "0",
@@ -23,7 +23,7 @@ def test_create_section_missing_fields():
     session = requests.Session()
     session.post(
         "http://localhost:1337/controllers/login.php",
-        data={"username": "testuser", "password": "testpassword"}
+        data={"username": "new_user", "password": "testpassword"}
     )
     data = {
         "id": "0",
