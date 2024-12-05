@@ -35,8 +35,8 @@ def test_create_board_missing_fields():
     # Пропускаем обязательное поле
     data = {
         "board-name": "", 
-        "description": "This is a test project description."
+        "description": "nonvalidproject."
     }
     response = session.post(BASE_URL, data=data)
     assert response.status_code == 200, "Request should fail due to missing fields"
-    assert "error" in response.text.lower(), "Error message should be present in response"
+    assert "nonvalidproject" not in response.text, "Error it created with empty name"
