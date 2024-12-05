@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     if (empty($taskName) || empty($description) || empty($sectionId)) {
-       echo json_encode(["error" => "2"]);
+        echo json_encode(["error" => "2"]);
         header("Location: /../pages/dashboard.php");
         exit();
     } else {
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute([$sectionId]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-       echo json_encode(["error" => "3"]);
+        echo json_encode(["error" => "3"]);
         if ($result) {
             $taskBoardId = $result['task_board_id'];
 
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $pdo->prepare("INSERT INTO task (name, description, task_section_id, task_board_id, complete_date) VALUES (?, ?, ?, ?, ?)");
             if ($stmt->execute([$taskName, $description, $sectionId, $taskBoardId, $completeDate])) {
                 echo json_encode(["error" => "4"]);
-               header("Location: /../pages/board.php?id=$taskBoardId");
+                header("Location: /../pages/board.php?id=$taskBoardId");
                 exit();
             } else {
                 echo json_encode(["error" => "5"]);
