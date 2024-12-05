@@ -23,4 +23,4 @@ def test_login_success():
     response = requests.post(BASE_URL, data=data)
 
     assert response.status_code == 200, f"Expected 200, but got {response.status_code}"
-    assert "Успішна авторизація!" in response.text
+    assert "Dashboard" in response.text
