@@ -7,7 +7,7 @@ def test_create_board_successfully():
     session = requests.Session()
     session.post(
         "http://localhost:1337/controllers/createboard.php",
-        data={"username": "new_user", "newpassword": "testpassword"}
+        data={"username": "new_user", "password": "newpassword"}
     )
     data = {
         "board-name": "Test Board",
@@ -21,7 +21,7 @@ def test_create_board_missing_fields():
     session = requests.Session()
     session.post(
         "http://localhost:1337/controllers/login.php",
-        data={"username": "testuser", "password": "testpassword"}
+        data={"username": "new_user", "password": "newpassword"}
     )
     data = {
         "board-name": "", 
