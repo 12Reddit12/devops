@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'username' => $user['username'],
                 'avatar' => $user['avatar'] ?? null
             ];
+             $_SESSION['validation']['error'] = "Успішна авторизація!";
             header("Location: /../pages/dashboard.php"); 
             exit();
         } else {
