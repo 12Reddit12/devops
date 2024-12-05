@@ -47,5 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     }
+    echo json_encode(["error" => "7"]);
+    header("Location: /../pages/dashboard.php");
+    exit();
 }
 ?>
