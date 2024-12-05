@@ -1,6 +1,8 @@
  #!/bin/bash
  set -e
 sudo apt-get update
+sudo ufw allow 22
+sudo ufw reload
 echo "** Install Jenkins **"
 sudo apt-get install -y fontconfig openjdk-17-jre
 curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee \
