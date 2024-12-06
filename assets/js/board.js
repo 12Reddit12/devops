@@ -82,14 +82,14 @@ optionBtn.forEach(button => {
 
 
 function handleUpdateTaskBoard(e) {
-    e.preventDefault(); // Предотвращаем стандартное действие формы
+    e.preventDefault();
 
-    // Получаем данные из формы
+
     const taskBoardId = document.getElementById('task-section-id').value;
     const boardName = document.getElementById('modify-section-name').value;
     const description = document.getElementById('modify-description').value;
 
-    // Отправляем данные на сервер
+
     fetch('/controllers/update_section.php', {
         method: 'POST',
         headers: {
@@ -105,12 +105,12 @@ function handleUpdateTaskBoard(e) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.text(); // Вы можете изменить это на response.json(), если сервер возвращает JSON
+        return response.text();
     })
     .then(result => {
-        // Обработка успешного ответа
+
         console.log('Success:', result);
-        // Обновите страницу или выполните другие действия
+
         window.location.reload();
     })
     .catch(error => {
@@ -141,7 +141,7 @@ function handleDeleteTaskBoard(e) {
         })
         .then(result => {
             console.log('Success:', result);
-            // Обновите страницу или удалите элемент из DOM
+
             window.location.reload();
         })
         .catch(error => {
@@ -173,14 +173,14 @@ function handleShowNewTaskModal(e) {
 }
 
 function handleCreateNewTask(e) {
-    e.preventDefault(); // Предотвращаем стандартное действие формы
+    e.preventDefault();
 
-    // Получаем данные из формы
+
     const taskBoardId = document.getElementById('task-section-id-2').value;
     const boardName = document.getElementById('task-name').value;
     const description = document.getElementById('task-description').value;
  const completedate = document.getElementById('complete-date').value;
-    // Отправляем данные на сервер
+
     fetch('/controllers/createtask.php', {
         method: 'POST',
         headers: {
@@ -197,12 +197,10 @@ function handleCreateNewTask(e) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.text(); // Вы можете изменить это на response.json(), если сервер возвращает JSON
+        return response.text();
     })
     .then(result => {
-        // Обработка успешного ответа
         console.log('Success:', result);
-        // Обновите страницу или выполните другие действия
         window.location.reload();
     })
     .catch(error => {
@@ -277,14 +275,12 @@ updateTaskBtn.addEventListener('click', handleUpdateTask);
 deleteTaskBtn.addEventListener('click', handleDeleteTask);
 
 function handleUpdateTask(e) {
-  e.preventDefault(); // Предотвращаем стандартное действие формы
+  e.preventDefault();
 
-    // Получаем данные из формы
     const taskBoardId = document.getElementById('task-id').value;
     const boardName = document.getElementById('modify-task-name').value;
     const description = document.getElementById('modify-task-description').value;
 const completedate = document.getElementById('modify-task-complete-date').value;
-    // Отправляем данные на сервер
     fetch('/controllers/update_task.php', {
         method: 'POST',
         headers: {
@@ -301,12 +297,12 @@ const completedate = document.getElementById('modify-task-complete-date').value;
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.text(); // Вы можете изменить это на response.json(), если сервер возвращает JSON
+        return response.text();
     })
     .then(result => {
-        // Обработка успешного ответа
+
         console.log('Success:', result);
-        // Обновите страницу или выполните другие действия
+
         window.location.reload();
     })
     .catch(error => {
@@ -335,7 +331,6 @@ function handleDeleteTask(e) {
         })
         .then(result => {
             console.log('Success:', result);
-            // Обновите страницу или удалите элемент из DOM
             window.location.reload();
         })
         .catch(error => {
@@ -373,7 +368,6 @@ fetch('/controllers/complete_task.php', {
         })
         .then(result => {
             console.log('Success:', result);
-            // Обновите страницу или удалите элемент из DOM
             //window.location.reload();
         })
         .catch(error => {
