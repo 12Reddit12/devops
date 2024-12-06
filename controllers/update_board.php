@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $boardname = trim($_POST['board-name']);
     $description = trim($_POST['description']);
 
-    // Проверка на заполненность полей
+
     if (empty($boardname) || empty($description)) {
         header("Location: /../pages/dashboard.php");
         exit();
